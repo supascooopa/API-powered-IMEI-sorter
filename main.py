@@ -16,7 +16,7 @@ sheet_names_lst = wb.sheetnames
 # --- Creating new workbook ---#
 new_wb = Workbook()
 new_ws = new_wb.active
-new_ws.append(["IMEI 1", "IMEI 2", "BRAND", "MODEL"])
+new_ws.append(["IMEI 1", "IMEI 2","E-IMEI", "BRAND", "MODEL"])
 row_number = 2
 
 # going through each page
@@ -44,7 +44,7 @@ for sheet_names in sheet_names_lst:
                     # Checking to see if the cell only contains numbers
                     if isinstance(cells, int):
                         # Appending to the new ws and leaving the second IMEI slot empty
-                        new_ws.append([cells, " ", phone_model, phone_brand])
+                        new_ws.append([cells, " "," ",phone_model, phone_brand])
             # filtering for the second IMEI
             elif column_headers is not None and column_headers.endswith("2"):
                 for cells in cols:
